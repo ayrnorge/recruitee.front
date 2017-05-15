@@ -1,5 +1,7 @@
 import {User} from "../../users/users.ts";
+import {JobAd} from "../../users/job-ads.ts";
 import {UsersDataService} from "../../users/services/users-data.service.ts";
+import {JobAdService} from "../../job-ads/services/job-ad.service.ts";
 
 /**
  * @ngInject
@@ -18,22 +20,30 @@ export class AppComponent {
   // Define our injectables
   private $mdSidenav:angular.material.ISidenavService;
   private UsersDataService:UsersDataService;
+  private JobAdService:JobAdService;
 
   // Define our own variables
   private users:User[];
+  private offers:JobAd[];
   private selected:User;
 
   // Define our constructor and inject the necessary services
-  constructor($mdSidenav:angular.material.ISidenavService, UsersDataService:UsersDataService) {
+  constructor($mdSidenav:angular.material.ISidenavService, UsersDataService:UsersDataService, JobAdService:JobAdService) {
     // Store all of our injectables
     this.$mdSidenav = $mdSidenav;
     this.UsersDataService = UsersDataService;
+    this.JobAdService = JobAdService;
 
     // Load our users and store them to a variable
     UsersDataService.loadAllUsers().then((users:User[]) => {
       this.users = users;
       this.selected = users[0];
     });
+
+    JobAdService.loadAllOffers().then((offers:JobAd[]) => {
+      console.log(offers);
+    });
+
   }
 
   /**

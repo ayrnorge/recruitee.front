@@ -1,0 +1,13 @@
+* {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+h1, h2, h3, h4 {
+    color: #3D999D;
+}
+
+#content {
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 5px;
+}
