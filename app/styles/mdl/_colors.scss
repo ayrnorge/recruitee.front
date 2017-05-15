@@ -1,0 +1,64 @@
+/* For use in _color-definitions.scss */
+$palette-brandprimary:
+"231, 241, 242"
+"195, 221, 222"
+"155, 199, 201"
+"114, 176, 179"
+"84, 159, 162"
+"54, 142, 146"
+"48, 134, 138"
+"41, 123, 127"
+"34, 113, 117"
+"22, 95, 99"
+"156, 250, 255"
+"105, 247, 255"
+"54, 244, 255"
+"29, 242, 255"
+;
+
+$palette-brandprimary-50: nth($palette-brandprimary, 1);
+$palette-brandprimary-100: nth($palette-brandprimary, 2);
+$palette-brandprimary-200: nth($palette-brandprimary, 3);
+$palette-brandprimary-300: nth($palette-brandprimary, 4);
+$palette-brandprimary-400: nth($palette-brandprimary, 5);
+$palette-brandprimary-500: nth($palette-brandprimary, 6);
+$palette-brandprimary-600: nth($palette-brandprimary, 7);
+$palette-brandprimary-700: nth($palette-brandprimary, 8);
+$palette-brandprimary-800: nth($palette-brandprimary, 9);
+$palette-brandprimary-900: nth($palette-brandprimary, 10);
+$palette-brandprimary-A100: nth($palette-brandprimary, 11);
+$palette-brandprimary-A200: nth($palette-brandprimary, 12);
+$palette-brandprimary-A400: nth($palette-brandprimary, 13);
+$palette-brandprimary-A700: nth($palette-brandprimary, 14);
+
+
+$palette-brandsecondary:
+"249, 233, 235"
+"239, 200, 204"
+"229, 163, 170"
+"219, 126, 136"
+"211, 99, 111"
+"203, 71, 85"
+"198, 64, 78"
+"190, 55, 68"
+"184, 47, 59"
+"172, 32, 42"
+"255, 229, 231"
+"255, 179, 183"
+"255, 128, 136"
+"255, 102, 112";
+
+$palette-brandsecondary-50: nth($palette-brandsecondary, 1);
+$palette-brandsecondary-100: nth($palette-brandsecondary, 2);
+$palette-brandsecondary-200: nth($palette-brandsecondary, 3);
+$palette-brandsecondary-300: nth($palette-brandsecondary, 4);
+$palette-brandsecondary-400: nth($palette-brandsecondary, 5);
+$palette-brandsecondary-500: nth($palette-brandsecondary, 6);
+$palette-brandsecondary-600: nth($palette-brandsecondary, 7);
+$palette-brandsecondary-700: nth($palette-brandsecondary, 8);
+$palette-brandsecondary-800: nth($palette-brandsecondary, 9);
+$palette-brandsecondary-900: nth($palette-brandsecondary, 10);
+$palette-brandsecondary-A100: nth($palette-brandsecondary, 11);
+$palette-brandsecondary-A200: nth($palette-brandsecondary, 12);
+$palette-brandsecondary-A400: nth($palette-brandsecondary, 13);
+$palette-brandsecondary-A700: nth($palette-brandsecondary, 14);
