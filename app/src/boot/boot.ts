@@ -11,18 +11,17 @@ import 'angular-sanitize';
 import {AppComponent} from "../components/start-app/start-app.component.ts";
 import {UsersListComponent} from "../users/components/users-list/users-list.component.ts";
 import {UserDetailsComponent} from "../users/components/user-details/user-details.component.ts";
+import {JobAdComponent} from "../jobads/components/jobads/job-ad.component.ts";
 
 import {Users} from '../users/users.ts';
-import {JobAds} from '../job-ads/job-ads.ts';
+import {JobAds} from '../jobads/jobads.ts';
 
 module MaterialStart {
   "use strict";
 
   // Register our module and it's dependencies
-  angular.module('MaterialStart', ['ngMaterial', 'ngSanitize', Users.name])
+  angular.module('MaterialStart', ['ngMaterial', 'ngSanitize', Users.name, JobAds.name])
     .config(function ($mdIconProvider:angular.material.IIconProvider, $mdThemingProvider:angular.material.IThemingProvider) {
-
-      console.log(JobAds);
 
       var brandPrimary = {
         '50': '#89ced1',
@@ -75,5 +74,6 @@ module MaterialStart {
     .component(AppComponent.componentName, AppComponent.componentConfig)
     .component(UsersListComponent.componentName, UsersListComponent.componentConfig)
     .component(UserDetailsComponent.componentName, UserDetailsComponent.componentConfig)
+    .component(JobAdComponent.componentName, JobAdComponent.componentConfig)
   ;
 }

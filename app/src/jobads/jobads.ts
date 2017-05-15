@@ -2,7 +2,7 @@
 import {JobAdService} from './services/job-ad.service.ts';
 
 // Define our User interface
-export interface JobAd {
+export interface JobAds {
   title: string;
   slug: string;
   position: string;
@@ -22,10 +22,10 @@ export interface JobAd {
 }
 
 // Define the Angular 'JobAd' module
-export module JobAd {
-  export var name:string = 'JobAd';
+export module JobAds {
+  export var name:string = 'JobAds';
 
   angular
-    .module(JobAd.name, ['ngMaterial'])
+    .module(JobAds.name, ['ngMaterial'])
     .service("JobAdService", JobAdService);
 }

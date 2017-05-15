@@ -1,7 +1,7 @@
 import {User} from "../../users/users.ts";
-import {JobAd} from "../../users/job-ads.ts";
+import {JobAd} from "../../users/jobads.ts";
 import {UsersDataService} from "../../users/services/users-data.service.ts";
-import {JobAdService} from "../../job-ads/services/job-ad.service.ts";
+import {JobAdService} from "../../jobads/services/job-ad.service.ts";
 
 /**
  * @ngInject
@@ -24,11 +24,12 @@ export class AppComponent {
 
   // Define our own variables
   private users:User[];
-  private offers:JobAd[];
+  private jobAds:JobAd[];
+  private jobAd:JobAd;
   private selected:User;
 
   // Define our constructor and inject the necessary services
-  constructor($mdSidenav:angular.material.ISidenavService, UsersDataService:UsersDataService, JobAdService:JobAdService) {
+  constructor($mdSidenav:angular.material.ISidenavService, UsersDataService:UsersDataService, JobAdService:JobAdService, $location) {
     // Store all of our injectables
     this.$mdSidenav = $mdSidenav;
     this.UsersDataService = UsersDataService;
@@ -40,9 +41,20 @@ export class AppComponent {
       this.selected = users[0];
     });
 
-    JobAdService.loadAllOffers().then((offers:JobAd[]) => {
-      console.log(offers);
-    });
+    var jobId = ($location.search()).id;
+    if(typeof jobId !== 'undefined'){
+      JobAdService.loadOne(jobId).then((jobAd:JobAd) => {
+        this.jobAd = jobAd;
+      }).catch(function(error){
+        JobAdService.loadFirstActive().then((jobAd:JobAd) => {
+          this.jobAd = jobAd;
+        });
+      });
+    } else {
+      JobAdService.loadFirstActive().then((jobAd:JobAd) => {
+        this.jobAd = jobAd;
+      });
+    }
 
   }
 

@@ -18,5 +18,8 @@
     "systemjs": "^0.19.28",
     "typescript": "^1.8.10",
     "typings": "^1.3.2"
+  },
+  "scripts": {
+    "postinstall": "typings install dt~jquery --global --save && typings install dt~angular-animate dt~angular-material dt~angular --save"
   }
 }

@@ -1,2 +1,5 @@
 node_modules
+app/jspm_packages
 yarn.lock
+typings/
+dist/
