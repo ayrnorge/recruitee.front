@@ -1,0 +1,14 @@
+application: recruitee
+version: 0
+runtime: php55
+api_version: 1
+threadsafe: false
+
+handlers:
+- url: /$
+  static_files: index.html
+  upload: index.html
+
+- url: /(.*)
+  static_files: \1
+  upload: .*
