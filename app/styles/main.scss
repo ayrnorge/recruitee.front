@@ -50,6 +50,11 @@ will be correctly compiled during `gulp serve` and `gulp`
   }
 }
 
+.app-container {
+  margin: auto;
+  max-width: 700px;
+}
+
 h1 {
   font-size: 20px;
 }

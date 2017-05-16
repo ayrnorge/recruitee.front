@@ -33,7 +33,7 @@
 		    transform: translate(-50%, -50%);
 			font-size: 70px;
 		}
-		
+
 	</style>
 
 	<script>
@@ -41,9 +41,15 @@
 		var videos = [
 
 			{
-				name: 'Richard Kvadsheim',
-				position: 'Account Manager',
-				id: 'WX871sTdtkM'
+				name: 'Nora Øverås',
+				position: 'Markedsfører',
+				id: 'Ha-fr5uUad4'
+			},
+
+			{
+				name: 'Simen A. W. Olsen',
+				position: 'Kommunikasjonssjef',
+				id: 'B3qig-oSOGM'
 			}
 
 		];
@@ -54,7 +60,7 @@
 		this.position = selected.position;
 		this.id = selected.id;
 
-		this.thumbnail = 'http://img.youtube.com/vi/' + selected.id + '/mqdefault.jpg';
+		this.thumbnail = 'http://img.youtube.com/vi/' + selected.id + '/sddefault.jpg';
 
 		playvideo(event) {
 			var iframe = document.createElement("iframe");

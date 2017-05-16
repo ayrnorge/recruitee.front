@@ -5,14 +5,14 @@
 		Lyst til å bli bedre kjent med oss?<br />
 		La oss ta en prat, så ser vi hvor det<br />
 		bærer!<br /><br />
-		<button class="mdl-button mdl-button-inverted-white mdl-js-button mdl-js-ripple-effect">La oss bli kjent</button>
 		<img class="logo" src="/images/logo.svg" alt="" />
+		<div class="clear"></div>
 	</p>
 
 	<style>
 		footer {
 			color: #FFFFFF;
-			background: #cb4755;
+			background: #cf5362;
 			width: 100%;
 			margin-top: 30px;
 		}

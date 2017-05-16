@@ -56,7 +56,7 @@
 			margin-bottom: 0px;
 			color: #383838;
 		}
-		
+
 	</style>
 
 	<script>
@@ -64,14 +64,20 @@
 		var videos = [
 
 			{
-				name: 'Richard Kvadsheim',
-				position: 'Account Manager',
-				id: 'WX871sTdtkM'
+				name: 'Nora Øverås',
+				position: 'Markedsfører',
+				id: 'Ha-fr5uUad4'
+			},
+
+			{
+				name: 'Simen A. W. Olsen',
+				position: 'Kommunikasjonssjef',
+				id: 'B3qig-oSOGM'
 			}
 
 		];
 
-		var selected = videos[0];
+		var selected = videos[Math.floor(Math.random() * videos.length)];
 
 		this.name = selected.name
 		this.position = selected.position;

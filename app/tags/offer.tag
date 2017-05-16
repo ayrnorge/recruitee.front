@@ -3,12 +3,12 @@
 	<div class="container">
 		<h1>{ offer.title }</h1>
 
-		<button class="mdl-button mdl-button-inverted mdl-js-button mdl-js-ripple-effect">La oss bli kjent</button>
+		<a href="https://ayras.recruitee.com/o/{ offer.slug }/c/new" class="mdl-button mdl-button-inverted mdl-js-button mdl-js-ripple-effect">La oss bli kjent</a>
 
-		<raw content="{ offer.description }" class="content"></raw>	
+		<raw content="{ offer.description }" class="content"></raw>
 	</div>
 	<youtube></youtube>
-	
+
 	<style>
 		.mdl-button {
 			margin-bottom: 30px;
@@ -48,7 +48,7 @@
 
 		route(function(id) {
 			getOffer(id);
-		})	
+		})
 
 		riot.tag('raw', '<span></span>', function (opts) {
 		    this.updateContent = function () {
