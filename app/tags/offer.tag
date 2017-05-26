@@ -31,10 +31,22 @@
 			}).then(function(body) {
 				if(id == 0){
 					self.offer = body.offers[0];
+					dataLayer.push([
+						{
+							'offerId': self.offer.id,
+							'offer': self.offer
+						}
+					]);
 					console.log('No ID.')
 				} else {
 					body.offers.forEach(function(offer){
 						if(offer.id === parseInt(id)){
+							dataLayer.push([
+								{
+									'offerId': offer.id,
+									'offer': offer
+								}
+							]);
 							self.offer = offer;
 							self.update()
 						}

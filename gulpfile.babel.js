@@ -128,6 +128,18 @@ gulp.task('scripts', () =>
 );
 
 // Scan your HTML for assets & optimize them
+gulp.task('tags', () => {
+  return gulp.src('app/tags/*.tag')
+    .pipe(gulp.dest('dist/tags'));
+});
+
+// Scan your HTML for assets & optimize them
+gulp.task('yaml', () => {
+  return gulp.src('*.yaml')
+    .pipe(gulp.dest('dist'));
+});
+
+// Scan your HTML for assets & optimize them
 gulp.task('html', () => {
   return gulp.src('app/**/*.html')
     .pipe($.useref({
@@ -197,7 +209,7 @@ gulp.task('serve:dist', ['default'], () =>
 gulp.task('default', ['clean'], cb =>
   runSequence(
     'styles',
-    ['lint', 'html', 'scripts', 'images', 'copy'],
+    ['lint', 'html', 'tags', 'yaml', 'scripts', 'images', 'copy'],
     'generate-service-worker',
     cb
   )
