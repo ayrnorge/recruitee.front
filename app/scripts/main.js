@@ -18,7 +18,49 @@
  */
 /* eslint-env browser */
 (function() {
-  riot.mount('app')
-  riot.mount('footer')
-  route.start(true)
+    console.log('Starting up!');
+    var getOffer = function(id){
+        fetch('https://api.recruitee.com/c/ayras/careers/offers/?scope=active')
+        .then(function(response) {
+            return response.json()
+        }).then(function(body) {
+            if(id == 0){
+                dataLayer.push([
+                    {
+                        'offerId': body.offers[0].id,
+                        'offer': body.offers[0]
+                    }
+                ]);
+                console.log(body.offers[0]);
+                riot.mount('app', {
+                    'offer': body.offers[0]
+                });
+                console.log('No ID.')
+            } else {
+                body.offers.forEach(function(offer){
+                    if(offer.id === parseInt(id)){
+                        console.log(offer);
+                        dataLayer.push([
+                            {
+                                'offerId': offer.id,
+                                'offer': offer
+                            }
+                        ]);
+                        riot.mount('app', {
+                            'offer': offer
+                        });
+                    }
+                })
+            }
+        })
+    }
+
+    getOffer(0)
+
+    route(function(id) {
+        getOffer(id);
+    })
+
+    riot.mount('footer')
+
 })();

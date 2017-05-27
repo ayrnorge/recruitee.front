@@ -95,7 +95,6 @@
             iframe.style.width  = '100%';
             iframe.style.height = '200px';
 
-            console.log(iframe);
             document.getElementById('player').innerHTML = ' ';
             // Replace the YouTube thumbnail with YouTube Player
             document.getElementById('player').appendChild(iframe);

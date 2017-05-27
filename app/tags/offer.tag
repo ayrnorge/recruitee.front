@@ -21,46 +21,10 @@
 	<script>
 		var self = this;
 
+		console.log(dataLayer);
+
 		riot.mount('youtube');
 		riot.mount('headervideo');
-
-		var getOffer = function(id){
-			fetch('https://api.recruitee.com/c/ayras/careers/offers/?scope=active')
-			.then(function(response) {
-				return response.json()
-			}).then(function(body) {
-				if(id == 0){
-					self.offer = body.offers[0];
-					dataLayer.push([
-						{
-							'offerId': self.offer.id,
-							'offer': self.offer
-						}
-					]);
-					console.log('No ID.')
-				} else {
-					body.offers.forEach(function(offer){
-						if(offer.id === parseInt(id)){
-							dataLayer.push([
-								{
-									'offerId': offer.id,
-									'offer': offer
-								}
-							]);
-							self.offer = offer;
-							self.update()
-						}
-					})
-				}
-				self.update()
-			})
-		}
-
-		getOffer(0)
-
-		route(function(id) {
-			getOffer(id);
-		})
 
 		riot.tag('raw', '<span></span>', function (opts) {
 		    this.updateContent = function () {
